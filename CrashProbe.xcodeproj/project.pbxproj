@@ -367,6 +367,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BE13B3F51F4CA31600CC5ACA /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				BE13B3FB1F4CA3C900CC5ACA /* Crashlytics */,
+				BE13B3FA1F4CA3C000CC5ACA /* MobileCenter */,
+				BE13B3F91F4CA3A800CC5ACA /* HockeyApp */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		BE13B3F91F4CA3A800CC5ACA /* HockeyApp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HockeyApp;
+			sourceTree = "<group>";
+		};
+		BE13B3FA1F4CA3C000CC5ACA /* MobileCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MobileCenter;
+			sourceTree = "<group>";
+		};
+		BE13B3FB1F4CA3C900CC5ACA /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Crashlytics;
+			sourceTree = "<group>";
+		};
 		FA4391E3170F113B00801CAB /* iOS Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +527,7 @@
 		FAF9BCAC16D2924500C8BB7D = {
 			isa = PBXGroup;
 			children = (
+				BE13B3F51F4CA31600CC5ACA /* Vendor */,
 				FACDBAB8170F0BB60059F0A7 /* CrashLib */,
 				1E1789E6189B15CF00CE4C53 /* CrashLib iOS Tests */,
 				FAF9BCBE16D2924500C8BB7D /* CrashProbe */,
@@ -721,6 +753,7 @@
 					};
 					FAF5BB6616F7A69C008BDDDF = {
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					FAF9BCB416D2924500C8BB7D = {
 						LastSwiftMigration = 0800;
@@ -999,6 +1032,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeyApp-SDK-iOS-4.1.6/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/MobileCenter-SDK-iOS-0.11.2",
+					"$(PROJECT_DIR)/Vendor/Crashlytics-SDK-iOS-3.8.5",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1052,6 +1091,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeyApp-SDK-iOS-4.1.6/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/MobileCenter-SDK-iOS-0.11.2",
+					"$(PROJECT_DIR)/Vendor/Crashlytics-SDK-iOS-3.8.5",
+				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/CrashLib-iOS/CrashLib-iOS-Info.plist";
@@ -1122,7 +1167,15 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeyApp-SDK-iOS-4.1.6/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/MobileCenter-SDK-iOS-0.11.2",
+					"$(PROJECT_DIR)/Vendor/Crashlytics-SDK-iOS-3.8.5",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrashProbe iOS/CrashProbe iOS-Prefix.pch";
@@ -1135,6 +1188,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.hockeyapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "CrashLib/CrashLib-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1149,7 +1204,15 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeyApp-SDK-iOS-4.1.6/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/Vendor/MobileCenter-SDK-iOS-0.11.2",
+					"$(PROJECT_DIR)/Vendor/Crashlytics-SDK-iOS-3.8.5",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrashProbe iOS/CrashProbe iOS-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -1160,6 +1223,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.hockeyapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "CrashLib/CrashLib-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

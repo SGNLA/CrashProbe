@@ -26,11 +26,45 @@
 
 #import "CRLAppDelegate.h"
 
+// #define HOCKEY_APP
+// #define MOBILE_CENTER
+// #define CRASHLYTICS
+
+#ifdef HOCKEY_APP
+@import HockeySDK;
+#endif
+
+#ifdef MOBILE_CENTER
+@import MobileCenter;
+@import MobileCenterAnalytics;
+@import MobileCenterCrashes;
+#endif
+
+#ifdef CRASHLYTICS
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#endif
+
 @implementation CRLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  return YES;
+#ifdef HOCKEY_APP
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"APP_ID"];
+    // Do some additional configuration if needed here
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation]; // This line is obsolete in the crash only builds
+#endif
+    
+#ifdef MOBILE_CENTER
+    [MSMobileCenter start:@"APP_SECRET" withServices:@[[MSAnalytics class], [MSCrashes class]]];
+#endif
+    
+#ifdef CRASHLYTICS
+    [Fabric with:@[[Crashlytics class]]];
+#endif
+    
+    return YES;
 }
 
 @end
