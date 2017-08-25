@@ -52,23 +52,27 @@ Crashlytics: Default version: 3.8.5 , [Official tutorial website](https://fabric
 7. Click CrashProbe in Project Navigator and select CrashProbeiOS in TARGETS.
 8. Select Build Phrases and add a New Run Build Phase.
 9. Add following sentence into Shell:
-    "${PROJECT_DIR}/Vendor/Crashlytics/Fabric.framework/run" API_KEY BUILD_SECRET
+```
+"${PROJECT_DIR}/Vendor/Crashlytics/Fabric.framework/run" API_KEY BUILD_SECRET
+```
 10.Update API_KEY and BUILD_SECRET.
 11.Add following setting into CrashProbe/CrashProbe iOS/Supporting Files/CrashProbe iOS-Info.plist
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>API_KEY</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
+```
+<key>Fabric</key>
+<dict>
+    <key>APIKey</key>
+    <string>API_KEY</string>
+    <key>Kits</key>
+    <array>
+        <dict>
+            <key>KitInfo</key>
+            <dict/>
+            <key>KitName</key>
+            <string>Crashlytics</string>
+        </dict>
+    </array>
+</dict>
+```
 12.Update API_KEY
 13.Update Bundle Identifier for CrashProbeiOS.
 14.Build ipa and start test.
