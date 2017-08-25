@@ -55,8 +55,8 @@ Crashlytics: Default version: 3.8.5 , [Official tutorial website](https://fabric
 ```
 "${PROJECT_DIR}/Vendor/Crashlytics/Fabric.framework/run" API_KEY BUILD_SECRET
 ```
-10.Update API_KEY and BUILD_SECRET.
-11.Add following setting into CrashProbe/CrashProbe iOS/Supporting Files/CrashProbe iOS-Info.plist
+10. Update API_KEY and BUILD_SECRET.
+11. Add following setting into CrashProbe/CrashProbe iOS/Supporting Files/CrashProbe iOS-Info.plist
 ```
 <key>Fabric</key>
 <dict>
@@ -73,9 +73,9 @@ Crashlytics: Default version: 3.8.5 , [Official tutorial website](https://fabric
     </array>
 </dict>
 ```
-12.Update API_KEY
-13.Update Bundle Identifier for CrashProbeiOS.
-14.Build ipa and start test.
+12. Update API_KEY
+13. Update Bundle Identifier for CrashProbeiOS.
+14. Build ipa and start test.
 
 ## Disclaimer
 
